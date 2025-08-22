@@ -4,7 +4,7 @@ import ImageAccordion from '@/components/accordions/ImageAccordion';
 import StandardTextbox from '@/components/textbox/StandardTextbox';
 import SimpleStepsBento from '@/components/bento/SimpleStepsBento';
 import PushableButton from '@/components/buttons/PushableButton';
-import { LucideIcon } from 'lucide-react';
+import { SparklesCore } from '@/components/sparkles/Sparkles';
 
 const sectionsData = {
   hero: {
@@ -15,9 +15,9 @@ const sectionsData = {
     imageAlt: "An abstract illustration representing our service",
   },
   features: [
-    { icon: <LucideIcon className="h-5 w-5" />, text: "Feature One" },
-    { icon: <LucideIcon className="h-5 w-5" />, text: "Feature Two" },
-    { icon: <LucideIcon className="h-5 w-5" />, text: "Feature Three" },
+    { icon: <SparklesCore className="h-5 w-5" />, text: "Feature One" },
+    { icon: <SparklesCore className="h-5 w-5" />, text: "Feature Two" },
+    { icon: <SparklesCore className="h-5 w-5" />, text: "Feature Three" },
   ],
   about: "Our service aims to simplify everyday tasks for everyone.",
   testimonials: [
