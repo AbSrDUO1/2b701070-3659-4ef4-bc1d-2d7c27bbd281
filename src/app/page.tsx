@@ -15,9 +15,9 @@ const sectionsData = {
     imageAlt: "An abstract illustration representing our service",
   },
   features: [
-    { icon: <LucideIcon />, text: "Feature One" },
-    { icon: <LucideIcon />, text: "Feature Two" },
-    { icon: <LucideIcon />, text: "Feature Three" },
+    { icon: <LucideIcon className="h-5 w-5" />, text: "Feature One" },
+    { icon: <LucideIcon className="h-5 w-5" />, text: "Feature Two" },
+    { icon: <LucideIcon className="h-5 w-5" />, text: "Feature Three" },
   ],
   about: "Our service aims to simplify everyday tasks for everyone.",
   testimonials: [
@@ -40,13 +40,19 @@ export default function Home() {
           description={<p>{sectionsData.hero.subcopy}</p>} 
           className="text-center"
         />
-        <img src={sectionsData.hero.imageSrc} alt={sectionsData.hero.imageAlt} className="mx-auto" />
+        <ImageAccordion 
+          items={[{ title: sectionsData.hero.imageAlt, content: <img src={sectionsData.hero.imageSrc} alt={sectionsData.hero.imageAlt} className="mx-auto" /> }]} 
+          title="Features"
+          className="max-w-2xl mx-auto"
+          imageSrc="/images/placeholder1.avif"
+          imageAlt="An abstract illustration representing our service"
+        />
         <PushableButton text={sectionsData.hero.cta} onClick={() => {}} className="mt-4" />
       </section>
 
       <section id="features" className="bg-white">
         <ImageAccordion 
-          items={sectionsData.features.map(feature => ({ title: feature.text, content: <div>{feature.icon}</div> }))}
+          items={sectionsData.features.map((feature) => ({ title: feature.text, content: <div>{feature.icon}</div> }))}
           title="Our Features"
           className="max-w-2xl mx-auto"
           imageSrc="/images/placeholder1.avif"
@@ -65,14 +71,20 @@ export default function Home() {
       <section id="testimonials" className="bg-white">
         <ContentTextbox 
           title={<h2>Testimonials</h2>} 
-          description={<p>{sectionsData.testimonials.map(({ quote, author }) => <blockquote><p>{quote}</p><footer>- {author}</footer></blockquote>)}</p>} 
+          description={(
+            <div>
+              {sectionsData.testimonials.map(({ quote, author }, index) => (
+                <blockquote key={index}><p>{quote}</p><footer>- {author}</footer></blockquote>
+              ))}
+            </div>
+          )}
           className="text-center"
         />
       </section>
 
       <section id="process" className="bg-white">
         <SimpleStepsBento 
-          items={sectionsData.process.map(step => ({ title: step.step, description: "Learn more about this step." }))}
+          items={sectionsData.process.map((step) => ({ title: step.step, description: "Learn more about this step." }))}
           className="max-w-md mx-auto"
         />
       </section>
