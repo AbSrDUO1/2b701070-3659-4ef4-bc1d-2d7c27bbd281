@@ -39,13 +39,13 @@ export default function Home() {
           title={<h1>{sectionsData.hero.headline}</h1>} 
           description={<p>{sectionsData.hero.subcopy}</p>} 
           className="text-center"
-        />
-        <ImageAccordion 
-          items={[{ title: sectionsData.hero.imageAlt, content: <img src={sectionsData.hero.imageSrc} alt={sectionsData.hero.imageAlt} className="mx-auto" /> }]} 
-          title="Features"
-          className="max-w-2xl mx-auto"
-          imageSrc="/images/placeholder1.avif"
-          imageAlt="An abstract illustration representing our service"
+          children={<ImageAccordion 
+            items={[{ title: sectionsData.hero.imageAlt, content: <img src={sectionsData.hero.imageSrc} alt={sectionsData.hero.imageAlt} className="mx-auto" /> }]} 
+            title="Features"
+            className="max-w-2xl mx-auto"
+            imageSrc="/images/placeholder1.avif"
+            imageAlt="An abstract illustration representing our service"
+          />}
         />
         <PushableButton text={sectionsData.hero.cta} onClick={() => {}} className="mt-4" />
       </section>
