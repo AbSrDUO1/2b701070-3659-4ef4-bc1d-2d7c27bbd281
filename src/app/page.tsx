@@ -46,9 +46,11 @@ export default function Home() {
 
       <section id="features" className="bg-white">
         <ImageAccordion 
-          items={sectionsData.features.map(feature => ({ title: feature.text, content: <div>{feature.icon}</div }))}
+          items={sectionsData.features.map(feature => ({ title: feature.text, content: <div>{feature.icon}</div> }))}
           title="Our Features"
           className="max-w-2xl mx-auto"
+          imageSrc="/images/placeholder1.avif"
+          imageAlt="An abstract illustration representing our service"
         />
       </section>
 
