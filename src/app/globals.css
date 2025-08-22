@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+
+  .bg-soft-noise {
+    background-image: var(--bg-noise, none);
+    background-color: var(--bg-base, transparent);
+    opacity: 0.06;
+  }
+}
+
+:root {
+  /* colors */
+  --color-primary: #135DAB;
+  --color-background: #FFFFFF;
+}
