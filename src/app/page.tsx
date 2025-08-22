@@ -12,23 +12,23 @@ const sectionsData = {
     subcopy: "Your quick guide to understanding our amazing service.",
     cta: "Get Started",
     imageSrc: "/images/placeholder1.avif",
-    imageAlt: "An abstract illustration representing our service",
+    imageAlt: "An abstract illustration representing our service"
   },
   features: [
     { icon: <SparklesCore className="h-5 w-5" />, text: "Feature One" },
     { icon: <SparklesCore className="h-5 w-5" />, text: "Feature Two" },
-    { icon: <SparklesCore className="h-5 w-5" />, text: "Feature Three" },
+    { icon: <SparklesCore className="h-5 w-5" />, text: "Feature Three" }
   ],
   about: "Our service aims to simplify everyday tasks for everyone.",
   testimonials: [
     { quote: "This service has changed my life!", author: "Satisfied Customer" },
-    { quote: "I can't imagine living without it now.", author: "Happy User" },
+    { quote: "I can't imagine living without it now.", author: "Happy User" }
   ],
   process: [
     { step: "Step One: Sign Up" },
     { step: "Step Two: Learn" },
-    { step: "Step Three: Enjoy!" },
-  ],
+    { step: "Step Three: Enjoy!" }
+  ]
 };
 
 export default function Home() {
@@ -39,14 +39,15 @@ export default function Home() {
           title={<h1>{sectionsData.hero.headline}</h1>} 
           description={<p>{sectionsData.hero.subcopy}</p>} 
           className="text-center"
-          children={<ImageAccordion 
-            items={[{ title: sectionsData.hero.imageAlt, content: <img src={sectionsData.hero.imageSrc} alt={sectionsData.hero.imageAlt} className="mx-auto" /> }]} 
+        >
+          <ImageAccordion 
+            items={[{ title: sectionsData.hero.imageAlt, content: <Image src={sectionsData.hero.imageSrc} alt={sectionsData.hero.imageAlt} className="mx-auto" />}]} 
             title="Features"
             className="max-w-2xl mx-auto"
             imageSrc="/images/placeholder1.avif"
             imageAlt="An abstract illustration representing our service"
-          />}
-        />
+          />
+        </ContentTextbox>
         <PushableButton text={sectionsData.hero.cta} onClick={() => {}} className="mt-4" />
       </section>
 
